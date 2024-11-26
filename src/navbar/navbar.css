@@ -1,0 +1,39 @@
+.navbar {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    padding: 10px 10px; 
+    border-bottom: 1px solid #6A24FE;
+    box-shadow: 15px;
+  }
+  
+  .Navbar-icon {
+    font-size: 1em;
+    padding-left: 10%;
+    color: white; 
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px; 
+    font-size: 1.5em; 
+    font-weight: 900;
+  }
+  
+  .navbar span {
+    display : flex;
+    padding-right: 100px;
+  }
+  .Navbar-Log_point {
+    width : 70px;
+    cursor : pointer;
+  }
+
+  /* .Navbar-signin{ 
+    /* background-color: blueviolet;
+    border-radius: 20px;
+    text-align: center;
+    width : 100px;
+    height : 35px; 
+  } */

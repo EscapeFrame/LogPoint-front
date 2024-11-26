@@ -1,0 +1,51 @@
+
+.Home-contents {
+    display: flex; /* Flexbox를 사용하여 정렬 */
+    flex-direction: column; /* 세로 방향으로 쌓이게 설정 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    margin-top: 40px; /* 상단 여백 추가 */
+    margin-left: 60%;
+}
+
+.Home-button {
+    display: block; 
+    margin-top: 10px; /* 버튼 간 여백 추가 */
+    padding: 10px 20px; /* 버튼 내 여백 추가 */
+    background-color: #8000ff; /* 버튼 배경색 추가 */
+    color: white; /* 버튼 텍스트 색상 추가 */
+    border: none; /* 기본 테두리 제거 */
+    border-radius: 5px; /* 버튼 모서리 둥글게 추가 */
+    cursor: pointer; /* 마우스 커서 포인터로 변경 */
+    width: auto; /* 버튼을 자동 폭으로 설정 */
+}
+.Home-button:hover {
+    background-color: #6A24FE;
+}
+.Home-text {
+    color: #FFF;
+    font-family: "Noto Sans KR";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.Home-pro_text {
+    text-align: left;
+    margin-right: 30px;
+}
+.Home-greet {
+    display : flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 200px;
+    position: absolute;
+    font-size : 38px;
+}
+
+.Home-Log_point {
+    width: 230px;
+    margin-top: 150px;
+}

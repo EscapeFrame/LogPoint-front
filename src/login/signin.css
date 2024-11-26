@@ -1,0 +1,106 @@
+/* signin.css */
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 중앙 정렬 */
+    justify-content: center; /* 세로 중앙 정렬 */
+    width: 450px;
+    height: 500px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto; /* 화면 가운데 정렬 */
+  }
+  
+  .login-wrapper > h2 {
+    font-size: 24px;
+    color: #6A24FE;
+    margin-bottom: 20px;
+  }
+  
+  #login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* 폼의 너비를 전체로 설정 */
+  }
+  
+  #login-form > input {
+    width: 100%;
+    height: 48px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    background-color: #F8F8F8;
+  }
+  
+  #login-form > input::placeholder {
+    color: #D2D2D2;
+  }
+  
+  #login-form > input[type="submit"] {
+    color: #fff;
+    font-size: 16px;
+    background-color: #6A24FE;
+    margin-top: 20px;
+    cursor: pointer; /* 클릭 가능한 커서 */
+  }
+  
+  #login-form > label {
+    display: flex;
+    align-items: center; /* 라벨과 체크박스 수평 정렬 */
+    color: #999999;
+    margin-bottom: 16px; /* 체크박스와 버튼 사이의 간격 */
+  }
+  
+  #login-form input[type="checkbox"] {
+    margin-right: 8px; /* 체크박스와 텍스트 간격 */
+    margin-left: 20px;
+  }
+ 
+.custom-hr {
+  border: 1;
+  height: 10px;
+  background: #ccc;
+  margin: 20px 0;
+}
+/* signin.css */
+
+/* 점선 스타일의 hr */
+hr {
+  border: none;
+  border-top: 1px dashed #ccc; /* 점선 스타일 */
+  margin: 20px 0; /* 상하 여백 */
+  color: white;
+}
+
+/* 회원가입 링크 스타일 */
+.signup-link {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.signup-link a {
+  color: #6A24FE; /* 링크 색상 */
+  text-decoration: none; /* 밑줄 제거 */
+  font-weight: bold;
+}
+
+.signup-link a:hover {
+  text-decoration: underline; /* 호버 시 밑줄 추가 */
+}
+/* signin.css */
+.google-login {
+  display: flex; /* Flexbox 사용 */
+  align-items: center; /* 수직 중앙 정렬 */
+}
+
+.google-login img {
+  max-width: 30px; /* 이미지 크기 조정 */
+  height: auto; /* 비율 유지 */
+  margin-left: 10px; /* 텍스트와 이미지 사이의 간격 */
+}
+
+.google-login label {
+  margin-left: 20px; /* 이미지와 체크박스 사이의 간격 */
+}

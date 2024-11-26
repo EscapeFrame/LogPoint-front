@@ -1,0 +1,65 @@
+main_page {
+    color: #FFF;
+    font-family: "Noto Sans KR";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+} 
+mouse_check { 
+    color: #FFF;
+    font-family: "Noto Sans KR";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+} /* check의 감도측정 포함*/
+gamdo_in_main {
+    color: #FFF;
+    font-family: "Noto Sans KR";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    }/*메인의 ("감도")괄호안 전체*/
+header {
+    color: #FFF;
+    font-family: "Noto Sans KR";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}/*헤더 전체 + check의 감도측정 안내포함*/
+log_button{
+    color: #FFF;
+    font-family: "Noto Sans KR";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}/*메인의 버튼*/
+check_shadow_header{
+    color: rgba(255, 255, 255, 0.50);
+    font-family: "Noto Sans KR";
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}/*감도 측정안내의 헤더*/
+move_mouse{ 
+    color: #FFF;
+    font-family: "Noto Sans KR";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+} /*마우스 움직이는 것의 폰트*/
+result {
+    color: #FFF;
+    font-family: "Noto Sans KR";
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+}/*결과창*/
