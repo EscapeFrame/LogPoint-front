@@ -15,7 +15,7 @@ const Signin = () => {
 
   useEffect(() => {
     const firebaseConfig = {
-      apiKey: "AIzaSyDg58p-hKEQgL72KABXj13iRGmFkg1uJME",
+      apiKey: "Secretkey",
       authDomain: "log-point.firebaseapp.com",
       projectId: "log-point",
       storageBucket: "log-point.appspot.com",
