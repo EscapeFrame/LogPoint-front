@@ -95,7 +95,6 @@ const Function = () => {
 }, [madeClick]);
 
   const handleSquareClick = async () => {
-    console.log('바로전 클릭 위치:', beforeClick); // 바로전 클릭한 원의 위치
     if (clickCount >= 6) {
       // 클릭 횟수가 6회에 도달하면 리스트를 백엔드에 전송
       try {
