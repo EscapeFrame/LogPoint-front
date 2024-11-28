@@ -14,6 +14,8 @@ const Function = () => {
   const [clickCount, setClickCount] = useState(0); // 클릭 횟수 추적
   const [madeCircle, setMadeCircle] = useState([]); // 생성된 원의 위치 리스트
   const [madeClick, setMadeClick] = useState([]); // 클릭한 위치 리스트
+  const [beforeClick, setBeforeClick] = useState([]) // 전의 클릭 위치ㅣ
+  const madeClickRef = useRef(madeClick); // madeClcik -1 의 위치
   const containerRef = useRef(null);
 
   const changeFunction = useCallback(() => {
@@ -37,7 +39,7 @@ const Function = () => {
     const randomOffsetY = Math.random() * (containerHeight - squareSize);
 
     return { left: randomOffsetX, top: randomOffsetY };
-  };
+  }; // 원위치 랜덤 생성
 
   const setInitialPosition = () => {
     const container = containerRef.current;
@@ -67,6 +69,7 @@ const Function = () => {
       if (!document.fullscreenElement) {
         changeFunction();
         setButtonVisible(true);
+        setClickCount(0);
       }
     };
 
@@ -87,23 +90,26 @@ const Function = () => {
     setCursorHidden(true); // 시작 후 커서 숨김
   };
 
+  useEffect(() => {
+    madeClickRef.current = madeClick; // madeClick이 변경될 때마다 ref 업데이트
+}, [madeClick]);
+
   const handleSquareClick = async () => {
+    console.log('바로전 클릭 위치:', beforeClick); // 바로전 클릭한 원의 위치
     if (clickCount >= 6) {
       // 클릭 횟수가 6회에 도달하면 리스트를 백엔드에 전송
       try {
-        const response = await axios.post('http://10.150.151.143:8080/your-endpoint', {
+        const response = await axios.post('http://10.150.151.143:8080/get-dpi', {
           madeClick,
-          madeCircle
+          madeCircle,
+          beforeClick
         });
         console.log('서버 응답:', response.data);
-        
-        // 클릭이 6회에 도달했을 때 리스트의 값을 콘솔에 출력
-        console.log('클릭한 위치 리스트:', madeClick);
-        console.log('생성된 원의 위치 리스트:', madeCircle);
   
         // 리스트 초기화
         setMadeClick([]);
         setMadeCircle([]);
+        setBeforeClick([]);
   
         // result.js로 이동
         navigate("/result"); // useNavigate를 사용하여 페이지 이동
@@ -118,14 +124,16 @@ const Function = () => {
     setSquareVisible(true);
   
     // 첫 번째 클릭이 아닐 때만 리스트에 추가
-    if (clickCount > 0) {
-      setMadeClick((prev) => [...prev, mousePosition]);
-      setMadeCircle((prev) => [...prev, newPosition]);
+    if (clickCount !== 0) {
+      setMadeClick((prev) => [...prev, mousePosition]); //마우스 클릭 위치
+      setMadeCircle((prev) => [...prev, newPosition]); //생성된 원 위치
+      setBeforeClick(madeClickRef.current);//이전 마우스 클릭 위치
       console.log('클릭한 위치:', mousePosition); // 클릭한 위치 콘솔 출력
       console.log('생성된 원의 위치:', newPosition); // 생성된 원의 위치 콘솔 출력
+      console.log('바로전 클릭 위치:', beforeClick); // 바로전 클릭한 원의 위치
     }
-  
-    setClickCount((prev) => prev + 1); // 클릭 횟수 증가
+    
+    setClickCount((prev) => (prev + 1)); // 클릭 횟수 증가
   
     // 커서를 잠시 보이게 함
     setCursorHidden(false);
